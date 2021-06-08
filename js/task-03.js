@@ -19,15 +19,13 @@ console.log(parent);
 const list = images.map((img) => {
   const item = `<li><img src ='${img.url}' alt ='${img.alt}'></li>`
   return item;
-})
+});
 
 console.log(list);
 
-
-const insertItem = function() {
-  list.forEach((el) => parent.insertAdjacentHTML('afterbegin',el));
-}
-
-insertItem();
+const insertItem = parent.insertAdjacentHTML('afterbegin',list.join(" "));
 
 parent.style.display = 'flex';
+
+
+
